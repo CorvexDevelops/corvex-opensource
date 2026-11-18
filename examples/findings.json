@@ -1,0 +1,5 @@
+[
+  {"file": "app.py", "line": 13, "sink_quote": "cur.execute(f\"SELECT * FROM users WHERE name = '{name}'\")", "entry_quote": "name = request.args.get(\"name\", \"\")"},
+  {"file": "app.py", "line": 5, "sink_quote": "cur.execute(f\"SELECT * FROM users WHERE name = '{name}'\")"},
+  {"file": "app.py", "line": 13, "sink_quote": "cursor.execute(query % name)"}
+]
