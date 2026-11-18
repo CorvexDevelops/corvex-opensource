@@ -1,0 +1,1103 @@
+{
+ "_note": "Flaws each target really contains. A finding matches an expected flaw when its location matches and either a keyword appears in its rule id or message, or one of its CWE ids is listed. Each finding counts for one expected flaw at most. On clean targets every finding is a false alarm, except the informational ones listed in \u00abinformational\u00bb.",
+ "version": 1,
+ "informational": {
+  "cwe": [],
+  "keywords": [
+   "licence",
+   "license"
+  ]
+ },
+ "targets": {
+  "web-vulnerable": {
+   "kind": "web",
+   "description": "deliberately vulnerable demo shop (targets/web-vulnerable/server.py)",
+   "expected": [
+    {
+     "id": "W01",
+     "title": "Server software version in response headers",
+     "cwe": [
+      200,
+      497
+     ],
+     "keywords": [
+      "banner",
+      "x-powered-by",
+      "version",
+      "server header",
+      "fingerprint"
+     ],
+     "path": ""
+    },
+    {
+     "id": "W02",
+     "title": "Content-Security-Policy missing",
+     "cwe": [
+      693,
+      1021
+     ],
+     "keywords": [
+      "content-security-policy",
+      "csp"
+     ],
+     "path": ""
+    },
+    {
+     "id": "W03",
+     "title": "Clickjacking: no X-Frame-Options or frame-ancestors",
+     "cwe": [
+      1021
+     ],
+     "keywords": [
+      "x-frame-options",
+      "clickjacking",
+      "frame-ancestors",
+      "framing"
+     ],
+     "path": ""
+    },
+    {
+     "id": "W04",
+     "title": "X-Content-Type-Options: nosniff missing",
+     "cwe": [
+      693,
+      16
+     ],
+     "keywords": [
+      "nosniff",
+      "x-content-type-options",
+      "mime"
+     ],
+     "path": ""
+    },
+    {
+     "id": "W05",
+     "title": "Session cookie without HttpOnly, Secure and SameSite",
+     "cwe": [
+      1004,
+      614,
+      1275
+     ],
+     "keywords": [
+      "cookie",
+      "httponly",
+      "samesite"
+     ],
+     "path": ""
+    },
+    {
+     "id": "W06",
+     "title": "Environment file exposed (/.env)",
+     "cwe": [
+      538,
+      200,
+      552
+     ],
+     "keywords": [
+      ".env",
+      "environment file",
+      "dotenv"
+     ],
+     "path": "/.env"
+    },
+    {
+     "id": "W07",
+     "title": "Git repository exposed (/.git)",
+     "cwe": [
+      538,
+      527,
+      200
+     ],
+     "keywords": [
+      "git"
+     ],
+     "path": "/.git"
+    },
+    {
+     "id": "W08",
+     "title": "Directory listing (/uploads/)",
+     "cwe": [
+      548
+     ],
+     "keywords": [
+      "listing",
+      "index of",
+      "directory"
+     ],
+     "path": "/uploads"
+    },
+    {
+     "id": "W09",
+     "title": "JavaScript source map exposed",
+     "cwe": [
+      540,
+      538,
+      200
+     ],
+     "keywords": [
+      "source map",
+      "sourcemap",
+      ".map"
+     ],
+     "path": "app.js"
+    },
+    {
+     "id": "W10",
+     "title": "CORS reflects any origin with credentials",
+     "cwe": [
+      942,
+      346
+     ],
+     "keywords": [
+      "cors",
+      "access-control-allow-origin",
+      "origin"
+     ],
+     "path": ""
+    },
+    {
+     "id": "W11",
+     "title": "Reflected cross-site scripting",
+     "cwe": [
+      79
+     ],
+     "keywords": [
+      "xss",
+      "cross-site scripting",
+      "script injection"
+     ],
+     "path": "/search"
+    },
+    {
+     "id": "W12",
+     "title": "SQL injection with database error",
+     "cwe": [
+      89
+     ],
+     "keywords": [
+      "sql"
+     ],
+     "path": "/product"
+    },
+    {
+     "id": "W13",
+     "title": "Open redirect",
+     "cwe": [
+      601
+     ],
+     "keywords": [
+      "redirect"
+     ],
+     "path": "/logout"
+    },
+    {
+     "id": "W14",
+     "title": "Outdated JavaScript library with known flaws (jQuery 1.12.4)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "jquery",
+      "outdated",
+      "vulnerable"
+     ],
+     "path": "jquery-1.12.4"
+    },
+    {
+     "id": "W15",
+     "title": "No limit on sign-in attempts",
+     "cwe": [
+      307,
+      799
+     ],
+     "keywords": [
+      "rate",
+      "brute",
+      "attempt",
+      "lockout",
+      "throttl"
+     ],
+     "path": "/login"
+    },
+    {
+     "id": "W16",
+     "title": "API specification published (openapi.json)",
+     "cwe": [
+      200,
+      497
+     ],
+     "keywords": [
+      "openapi",
+      "swagger",
+      "specification",
+      "spec"
+     ],
+     "path": "openapi.json"
+    },
+    {
+     "id": "W17",
+     "title": "API that returns user data without authentication",
+     "cwe": [
+      306,
+      284,
+      862,
+      200
+     ],
+     "keywords": [
+      "auth",
+      "unauthenticated",
+      "access control"
+     ],
+     "path": "/api/users"
+    },
+    {
+     "id": "W18",
+     "title": "GraphQL introspection enabled",
+     "cwe": [
+      200,
+      497
+     ],
+     "keywords": [
+      "introspection",
+      "graphql"
+     ],
+     "path": "/graphql"
+    }
+   ]
+  },
+  "web-clean": {
+   "kind": "web",
+   "clean": true,
+   "description": "the same shop configured well (targets/web-clean/server.py)"
+  },
+  "code-vulnerable": {
+   "kind": "code",
+   "description": "deliberately vulnerable demo project (targets/code-vulnerable)",
+   "expected": [
+    {
+     "id": "C01",
+     "title": "SQL injection (f-string query)",
+     "cwe": [
+      89
+     ],
+     "keywords": [
+      "sql"
+     ],
+     "file": "app.py",
+     "contains": "cur.execute(f\"SELECT"
+    },
+    {
+     "id": "C02",
+     "title": "SQL injection (template literal query)",
+     "cwe": [
+      89
+     ],
+     "keywords": [
+      "sql"
+     ],
+     "file": "server.js",
+     "contains": "db.query(`SELECT"
+    },
+    {
+     "id": "C03",
+     "title": "Command injection (shell=True)",
+     "cwe": [
+      78,
+      77
+     ],
+     "keywords": [
+      "command",
+      "shell",
+      "exec",
+      "subprocess"
+     ],
+     "file": "app.py",
+     "contains": "\"ping -c 1 \" + host"
+    },
+    {
+     "id": "C04",
+     "title": "Command injection (child_process.exec)",
+     "cwe": [
+      78,
+      77
+     ],
+     "keywords": [
+      "command",
+      "shell",
+      "exec",
+      "child_process"
+     ],
+     "file": "server.js",
+     "contains": "exec('convert '"
+    },
+    {
+     "id": "C05",
+     "title": "Server-side template injection",
+     "cwe": [
+      1336,
+      94,
+      79
+     ],
+     "keywords": [
+      "template",
+      "ssti",
+      "render_template_string"
+     ],
+     "file": "app.py",
+     "contains": "render_template_string(f\""
+    },
+    {
+     "id": "C06",
+     "title": "Unsafe YAML load",
+     "cwe": [
+      502,
+      20
+     ],
+     "keywords": [
+      "yaml",
+      "deserial",
+      "unsafe load"
+     ],
+     "file": "app.py",
+     "contains": "yaml.load(request.data)"
+    },
+    {
+     "id": "C07",
+     "title": "Unsafe pickle deserialisation",
+     "cwe": [
+      502
+     ],
+     "keywords": [
+      "pickle",
+      "deserial"
+     ],
+     "file": "app.py",
+     "contains": "pickle.loads("
+    },
+    {
+     "id": "C08",
+     "title": "DOM cross-site scripting (innerHTML)",
+     "cwe": [
+      79
+     ],
+     "keywords": [
+      "xss",
+      "innerhtml",
+      "cross-site scripting"
+     ],
+     "file": "public/cart.js",
+     "contains": "box.innerHTML"
+    },
+    {
+     "id": "C09",
+     "title": "Password hashed with MD5",
+     "cwe": [
+      327,
+      328,
+      916
+     ],
+     "keywords": [
+      "md5",
+      "hash",
+      "weak"
+     ],
+     "file": "app.py",
+     "contains": "hashlib.md5(password"
+    },
+    {
+     "id": "C10",
+     "title": "Reset token from a non-cryptographic random",
+     "cwe": [
+      330,
+      338
+     ],
+     "keywords": [
+      "random",
+      "prng",
+      "insecure random"
+     ],
+     "file": "app.py",
+     "contains": "random.choice("
+    },
+    {
+     "id": "C11",
+     "title": "Invite code from Math.random",
+     "cwe": [
+      330,
+      338
+     ],
+     "keywords": [
+      "random",
+      "prng",
+      "insecure random"
+     ],
+     "file": "server.js",
+     "contains": "Math.random()"
+    },
+    {
+     "id": "C12",
+     "title": "TLS certificate check disabled (verify=False)",
+     "cwe": [
+      295
+     ],
+     "keywords": [
+      "tls",
+      "ssl",
+      "certificate",
+      "verify"
+     ],
+     "file": "app.py",
+     "contains": "verify=False"
+    },
+    {
+     "id": "C13",
+     "title": "TLS certificate check disabled (rejectUnauthorized)",
+     "cwe": [
+      295
+     ],
+     "keywords": [
+      "tls",
+      "ssl",
+      "certificate",
+      "rejectunauthorized"
+     ],
+     "file": "server.js",
+     "contains": "rejectUnauthorized: false"
+    },
+    {
+     "id": "C14",
+     "title": "JWT decoded without verifying the signature",
+     "cwe": [
+      347,
+      345,
+      287
+     ],
+     "keywords": [
+      "jwt",
+      "signature",
+      "verify"
+     ],
+     "file": "server.js",
+     "contains": "jwt.decode("
+    },
+    {
+     "id": "C15",
+     "title": "Hard-coded secret key",
+     "cwe": [
+      798,
+      259,
+      321,
+      547
+     ],
+     "keywords": [
+      "secret",
+      "hardcoded",
+      "hard-coded",
+      "credential",
+      "key"
+     ],
+     "file": "app.py",
+     "contains": "SECRET_KEY = \""
+    },
+    {
+     "id": "C16",
+     "title": "Hard-coded database password",
+     "cwe": [
+      798,
+      259
+     ],
+     "keywords": [
+      "password",
+      "secret",
+      "hardcoded",
+      "hard-coded",
+      "credential"
+     ],
+     "file": "server.js",
+     "contains": "password: 'Password1234!'"
+    },
+    {
+     "id": "C17",
+     "title": "Hard-coded API key",
+     "cwe": [
+      798,
+      321
+     ],
+     "keywords": [
+      "api key",
+      "api_key",
+      "secret",
+      "hardcoded",
+      "hard-coded",
+      "credential",
+      "token"
+     ],
+     "file": "server.js",
+     "contains": "const API_KEY"
+    },
+    {
+     "id": "C18",
+     "title": "Cloud access key in the code",
+     "cwe": [
+      798
+     ],
+     "keywords": [
+      "aws",
+      "access key",
+      "secret",
+      "credential"
+     ],
+     "file": "config.py",
+     "contains": "AKIAIOSFODNN7EXAMPLE"
+    },
+    {
+     "id": "C19",
+     "title": "Debug mode on (setting)",
+     "cwe": [
+      489,
+      215,
+      11
+     ],
+     "keywords": [
+      "debug"
+     ],
+     "file": "app.py",
+     "contains": "DEBUG = True"
+    },
+    {
+     "id": "C20",
+     "title": "Debug mode on (app.run)",
+     "cwe": [
+      489,
+      215,
+      11
+     ],
+     "keywords": [
+      "debug"
+     ],
+     "file": "app.py",
+     "contains": "debug=True)"
+    },
+    {
+     "id": "C21",
+     "title": "CORS open to every origin",
+     "cwe": [
+      942,
+      346
+     ],
+     "keywords": [
+      "cors",
+      "origin"
+     ],
+     "file": "server.js",
+     "contains": "app.use(cors())"
+    },
+    {
+     "id": "C22",
+     "title": "Container image with the latest tag",
+     "cwe": [
+      1357,
+      1104,
+      829
+     ],
+     "keywords": [
+      "latest",
+      "tag",
+      "pin",
+      "digest"
+     ],
+     "file": "Dockerfile",
+     "contains": "FROM node:latest"
+    },
+    {
+     "id": "C23",
+     "title": "Container runs as root (no USER)",
+     "cwe": [
+      250,
+      269
+     ],
+     "keywords": [
+      "root",
+      "user",
+      "privilege"
+     ],
+     "file": "Dockerfile"
+    },
+    {
+     "id": "C24",
+     "title": "Dependency with known vulnerabilities (pyyaml)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "pyyaml"
+     ],
+     "file": "requirements.txt",
+     "contains": "pyyaml==5.3.1",
+     "tolerance": 0
+    },
+    {
+     "id": "C25",
+     "title": "Dependency with known vulnerabilities (flask)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "flask"
+     ],
+     "file": "requirements.txt",
+     "contains": "flask==2.0.1",
+     "tolerance": 0
+    },
+    {
+     "id": "C26",
+     "title": "Dependency with known vulnerabilities (requests)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "requests"
+     ],
+     "file": "requirements.txt",
+     "contains": "requests==2.25.1",
+     "tolerance": 0
+    },
+    {
+     "id": "C27",
+     "title": "Dependency with known vulnerabilities (jinja2)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "jinja2"
+     ],
+     "file": "requirements.txt",
+     "contains": "jinja2==3.0.0",
+     "tolerance": 0
+    },
+    {
+     "id": "C28",
+     "title": "Dependency with known vulnerabilities (axios)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "axios"
+     ],
+     "file": "package.json",
+     "contains": "\"axios\"",
+     "tolerance": 0
+    },
+    {
+     "id": "C29",
+     "title": "Dependency with known vulnerabilities (express)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "express"
+     ],
+     "file": "package.json",
+     "contains": "\"express\"",
+     "tolerance": 0
+    },
+    {
+     "id": "C30",
+     "title": "Dependency with known vulnerabilities (jsonwebtoken)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "jsonwebtoken"
+     ],
+     "file": "package.json",
+     "contains": "\"jsonwebtoken\"",
+     "tolerance": 0
+    },
+    {
+     "id": "C31",
+     "title": "Dependency with known vulnerabilities (lodash)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "lodash"
+     ],
+     "file": "package.json",
+     "contains": "\"lodash\"",
+     "tolerance": 0
+    },
+    {
+     "id": "C32",
+     "title": "Dependency with known vulnerabilities (minimist)",
+     "cwe": [
+      1395,
+      1104,
+      937
+     ],
+     "keywords": [
+      "minimist"
+     ],
+     "file": "package.json",
+     "contains": "\"minimist\"",
+     "tolerance": 0
+    }
+   ]
+  },
+  "code-clean": {
+   "kind": "code",
+   "clean": true,
+   "description": "the same project written well, with look-alike traps (targets/code-clean)"
+  },
+  "traffic-attacks": {
+   "kind": "traffic",
+   "description": "capture with one example of each attack (pcapgen attacks, with pcapgen indicators)",
+   "expected": [
+    {
+     "id": "T01",
+     "title": "Credentials sent with HTTP Basic auth",
+     "signal": "cleartext-http-basic",
+     "cwe": [
+      319,
+      523
+     ],
+     "keywords": [
+      "basic",
+      "credential",
+      "password",
+      "cleartext",
+      "plaintext"
+     ],
+     "where": "198.51.100.10"
+    },
+    {
+     "id": "T02",
+     "title": "Password sent in a cleartext HTTP form",
+     "signal": "cleartext-http-form",
+     "cwe": [
+      319,
+      523
+     ],
+     "keywords": [
+      "credential",
+      "password",
+      "form",
+      "cleartext",
+      "plaintext"
+     ],
+     "where": "198.51.100.11"
+    },
+    {
+     "id": "T03",
+     "title": "FTP login in cleartext",
+     "signal": "cleartext-ftp",
+     "cwe": [
+      319,
+      523
+     ],
+     "keywords": [
+      "ftp",
+      "credential",
+      "password",
+      "cleartext",
+      "plaintext"
+     ],
+     "where": "198.51.100.12"
+    },
+    {
+     "id": "T04",
+     "title": "IMAP login in cleartext",
+     "signal": "cleartext-imap",
+     "cwe": [
+      319,
+      523
+     ],
+     "keywords": [
+      "imap",
+      "credential",
+      "password",
+      "cleartext",
+      "plaintext"
+     ],
+     "where": "198.51.100.13"
+    },
+    {
+     "id": "T05",
+     "title": "SMTP AUTH PLAIN without TLS",
+     "signal": "cleartext-smtp",
+     "cwe": [
+      319,
+      523
+     ],
+     "keywords": [
+      "smtp",
+      "auth",
+      "credential",
+      "password",
+      "cleartext",
+      "plaintext"
+     ],
+     "where": "198.51.100.14"
+    },
+    {
+     "id": "T06",
+     "title": "LDAP simple bind in cleartext",
+     "signal": "cleartext-ldap",
+     "cwe": [
+      319,
+      523
+     ],
+     "keywords": [
+      "ldap",
+      "bind",
+      "credential",
+      "password",
+      "cleartext",
+      "plaintext"
+     ],
+     "where": "192.168.1.5"
+    },
+    {
+     "id": "T07",
+     "title": "Telnet session",
+     "signal": "insecure-telnet",
+     "cwe": [
+      319
+     ],
+     "keywords": [
+      "telnet"
+     ],
+     "where": "192.168.1.9"
+    },
+    {
+     "id": "T08",
+     "title": "SMB version 1 negotiation",
+     "signal": "insecure-smbv1",
+     "cwe": [
+      327,
+      477
+     ],
+     "keywords": [
+      "smb"
+     ],
+     "where": "192.168.1.6"
+    },
+    {
+     "id": "T09",
+     "title": "SNMP v2c with the default community",
+     "signal": "insecure-snmp",
+     "cwe": [
+      1188,
+      798,
+      319
+     ],
+     "keywords": [
+      "snmp",
+      "community"
+     ],
+     "where": "192.168.1.2"
+    },
+    {
+     "id": "T10",
+     "title": "LLMNR name query (poisoning risk)",
+     "signal": "llmnr",
+     "cwe": [
+      350,
+      290
+     ],
+     "keywords": [
+      "llmnr",
+      "poison"
+     ],
+     "where": "office-printer"
+    },
+    {
+     "id": "T11",
+     "title": "TLS 1.0 negotiated",
+     "signal": "tls-old-version",
+     "cwe": [
+      326,
+      327,
+      757
+     ],
+     "keywords": [
+      "tls 1.0",
+      "tlsv1",
+      "tls1.0",
+      "old tls",
+      "deprecated",
+      "protocol version"
+     ],
+     "where": "198.51.100.20"
+    },
+    {
+     "id": "T12",
+     "title": "RC4 cipher suite negotiated",
+     "signal": "tls-weak-cipher",
+     "cwe": [
+      326,
+      327
+     ],
+     "keywords": [
+      "rc4",
+      "weak cipher",
+      "cipher"
+     ],
+     "where": "198.51.100.20"
+    },
+    {
+     "id": "T13",
+     "title": "TLS connection to a listed bad domain (SNI)",
+     "signal": "bad-domain",
+     "cwe": [],
+     "keywords": [
+      "malicious",
+      "indicator",
+      "ioc",
+      "threat",
+      "blocklist",
+      "blacklist",
+      "known bad",
+      "reputation"
+     ],
+     "where": "bad.malware.example"
+    },
+    {
+     "id": "T14",
+     "title": "Traffic with a listed bad address",
+     "signal": "bad-ip",
+     "cwe": [],
+     "keywords": [
+      "malicious",
+      "indicator",
+      "ioc",
+      "threat",
+      "blocklist",
+      "blacklist",
+      "known bad",
+      "reputation"
+     ],
+     "where": "203.0.113.66"
+    },
+    {
+     "id": "T15",
+     "title": "Session on a port typical of remote shells (4444)",
+     "signal": "suspicious-port",
+     "cwe": [],
+     "keywords": [
+      "port",
+      "suspicious",
+      "shell",
+      "backdoor"
+     ],
+     "where": "4444"
+    },
+    {
+     "id": "T16",
+     "title": "Web browsing in cleartext HTTP",
+     "signal": "cleartext-http",
+     "cwe": [
+      319
+     ],
+     "keywords": [
+      "http",
+      "cleartext",
+      "unencrypted",
+      "plaintext"
+     ],
+     "where": "news.example"
+    },
+    {
+     "id": "T17",
+     "title": "Long random DNS names under one domain (tunnel)",
+     "signal": "dns-tunnel",
+     "cwe": [],
+     "keywords": [
+      "tunnel",
+      "exfiltration",
+      "dns"
+     ],
+     "where": "tunnel.example"
+    },
+    {
+     "id": "T18",
+     "title": "Many NXDOMAIN answers for random names (generated domains)",
+     "signal": "dga",
+     "cwe": [],
+     "keywords": [
+      "dga",
+      "nxdomain",
+      "generated",
+      "random"
+     ],
+     "where": "NXDOMAIN"
+    },
+    {
+     "id": "T19",
+     "title": "Regular connections every 60 seconds (beacon)",
+     "signal": "beacon",
+     "cwe": [],
+     "keywords": [
+      "beacon",
+      "periodic",
+      "regular",
+      "c2",
+      "command and control"
+     ],
+     "where": "198.51.100.77"
+    },
+    {
+     "id": "T20",
+     "title": "The router address claimed by a second MAC (ARP spoofing)",
+     "signal": "arp-spoofing",
+     "cwe": [
+      291,
+      290
+     ],
+     "keywords": [
+      "arp",
+      "spoof",
+      "poison"
+     ],
+     "where": "192.168.1.1"
+    },
+    {
+     "id": "T21",
+     "title": "A second DHCP server on the network",
+     "signal": "rogue-dhcp",
+     "cwe": [
+      290
+     ],
+     "keywords": [
+      "dhcp",
+      "rogue"
+     ],
+     "where": "192.168.1.66"
+    }
+   ]
+  },
+  "traffic-clean": {
+   "kind": "traffic",
+   "clean": true,
+   "description": "ordinary traffic (pcapgen clean)"
+  }
+ }
+}
