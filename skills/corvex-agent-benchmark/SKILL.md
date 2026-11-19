@@ -47,3 +47,6 @@ In the Corvex benchmark the first run showed 71/72 and 3 false alarms:
 - `eval` in a docstring, MD5 used as a cache key and a test password were flagged.
 
 After fixing the four rules the benchmark showed 72/72 and 0 false alarms, and that became the new baseline.
+
+## Ready-made kit
+The `bench/` folder of this repository puts the method into practice: web, code and network twins, 71 expected flaws described by CWE and location, and `bench.py score` for any tool that writes SARIF or JSON.

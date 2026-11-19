@@ -64,7 +64,9 @@ Skills use the common `SKILL.md` format: a short YAML header and Markdown sectio
 
 ## Why it matters
 
-On the Corvex benchmark, the internal version of `bench/`:
+On `bench/`, scored with `bench.py score` like any other tool, Corvex finds **71 of 71** known flaws with **zero false alarms** on the clean twins (18/18 web, 32/32 code, 21/21 network, offline, without the AI auditor). These targets are the English twins of the benchmark Corvex is tuned on, so read it as our regression baseline, not as an independent test. Send us your tool's score.
+
+On the internal version of the benchmark:
 - the rule-based agents find 78 of 78 known flaws, attack chains included, with zero false alarms on the clean twins
 - with checklists and verified evidence, the compact model finds access-control and path-traversal flaws that it missed when asked to "find vulnerabilities"
 - verification discards every wrong candidate on the clean project

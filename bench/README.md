@@ -25,7 +25,7 @@ python3 bench.py score results/ --baseline baseline.json            # later runs
 
 ## How a finding matches an expected flaw
 
-1. **Location.** Code: the same file, and a line within 2 of the line that contains the snippet in `expected.json` (0 for dependencies). Lines are found by the snippet, not stored as numbers, so editing a target does not break the expectations. Web: the path in the URL (`/search`, `/.env`). Network: the address, port or name in the location or message.
+1. **Location.** Code: the same file, and a line within 2 of the line that contains the snippet in `expected.json` (0 for dependencies). Lines are found by the snippet, not stored as numbers, so editing a target does not break the expectations. Web: the path in the URL (`/search`, `/.env`). Network: the address, port or name in the location or message (some flaws accept more than one, such as a server named by address or by TLS name).
 2. **Kind.** One of the expected keywords appears in the rule id, message or rule description, or one of the finding's CWE ids is listed. A finding with the right file but no line counts only on a keyword.
 3. **Once.** Each finding counts for one expected flaw at most. The assignment is a maximum matching, so the order of findings does not change the score.
 

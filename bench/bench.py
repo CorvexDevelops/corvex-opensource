@@ -187,8 +187,9 @@ def location_ok(kind, exp, r, lines):
         return True, True
     if kind == "web":
         return exp.get("path", "") in _web_path(r["location"] or r["file"]), True
-    where = (exp.get("where") or "").lower()
-    return where in f"{r['location']} {r['message']} {r['rule']}".lower(), True
+    where = exp.get("where") or ""
+    text = f"{r['location']} {r['message']} {r['rule']}".lower()
+    return any(w.lower() in text for w in (where if isinstance(where, list) else [where])), True
 
 
 def edges(kind, exp, findings, lines):
@@ -309,7 +310,7 @@ def cmd_list(a):
     for name, spec in exp["targets"].items():
         print(f"\n{name}  ({spec['kind']}{', clean' if spec.get('clean') else ''})  {spec.get('description', '')}")
         for e in spec.get("expected", []):
-            where = e.get("file", "") + (f" «{e['contains']}»" if e.get("contains") else "") if spec["kind"] == "code" else e.get("path", e.get("where", ""))
+            where = e.get("file", "") + (f" «{e['contains']}»" if e.get("contains") else "") if spec["kind"] == "code" else e.get("path") or " or ".join(e["where"]) if isinstance(e.get("where"), list) else e.get("path", e.get("where", ""))
             cwe = ",".join(f"CWE-{c}" for c in e.get("cwe", []))
             print(f"  {e['id']}  {e['title']}  [{cwe or '-'}]  {where}")
 

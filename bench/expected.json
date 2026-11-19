@@ -927,7 +927,10 @@
       "llmnr",
       "poison"
      ],
-     "where": "office-printer"
+     "where": [
+      "office-printer",
+      "192.168.1.20"
+     ]
     },
     {
      "id": "T11",
@@ -946,7 +949,10 @@
       "deprecated",
       "protocol version"
      ],
-     "where": "198.51.100.20"
+     "where": [
+      "198.51.100.20",
+      "old.example"
+     ]
     },
     {
      "id": "T12",
@@ -961,7 +967,10 @@
       "weak cipher",
       "cipher"
      ],
-     "where": "198.51.100.20"
+     "where": [
+      "198.51.100.20",
+      "old.example"
+     ]
     },
     {
      "id": "T13",
